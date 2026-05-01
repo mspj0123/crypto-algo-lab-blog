@@ -4,86 +4,235 @@
 
 @charset "utf-8";
 
-// Minimal Mistakes のメインCSSをインポート
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
 // =============================================
-// 日本語・技術ブログ向けカスタムスタイル
+// 金融・投資ブログ向けカスタムスタイル
+// 参考: A Wealth of Common Sense / Of Dollars and Data
 // =============================================
 
-// 日本語テキストの読みやすさ改善
+// --- 日本語フォント設定 ---
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+  color: #1a1a2e;
 }
 
-// 本文の行間・文字サイズ調整
-.page__content,
-.archive__item-excerpt,
-.list__item .archive__item-teaser {
+// --- マストヘッド（ヘッダー）強化 ---
+.masthead {
+  border-bottom: 3px solid #0066cc;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: 1.2em;
+  letter-spacing: -0.02em;
+  color: #0066cc !important;
+}
+
+.masthead__menu-item a {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #444 !important;
+  &:hover {
+    color: #0066cc !important;
+  }
+}
+
+// --- ページタイトル ---
+.page__title {
+  font-size: 1.8em;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #1a1a2e;
+}
+
+// --- 本文 ---
+.page__content {
   p, li {
     line-height: 1.9;
-    font-size: 0.95em;
+    font-size: 1.0em;
+    color: #2d2d2d;
   }
-}
 
-// 記事見出しの余白
-.page__content {
+  // 見出し
   h2 {
-    margin-top: 2em;
-    padding-bottom: 0.3em;
-    border-bottom: 2px solid $border-color;
+    margin-top: 2.2em;
+    padding: 0.4em 0.8em;
+    background: #f0f6ff;
+    border-left: 4px solid #0066cc;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #1a1a2e;
+    border-radius: 0 4px 4px 0;
   }
+
   h3 {
-    margin-top: 1.6em;
+    margin-top: 1.8em;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1a1a2e;
+    border-bottom: 1px solid #e0e8f0;
+    padding-bottom: 0.3em;
   }
 }
 
-// コードブロックをより見やすく
-div.highlight,
-figure.highlight {
-  border-radius: 6px;
-  font-size: 0.85em;
-  line-height: 1.6;
-}
-
-// インラインコード
-code.highlighter-rouge {
-  font-size: 0.85em;
-  padding: 0.1em 0.4em;
-  border-radius: 3px;
-}
-
-// テーブルを読みやすく
+// --- 金融データテーブル ---
 .page__content table {
   width: 100%;
-  font-size: 0.9em;
-  th {
-    text-align: center;
+  font-size: 0.88em;
+  border-collapse: collapse;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+
+  thead tr {
+    background: #0066cc;
+    color: #fff;
+    th {
+      padding: 0.7em 1em;
+      text-align: center;
+      font-weight: 700;
+      border: none;
+    }
   }
-  td, th {
-    padding: 0.5em 0.8em;
+
+  tbody {
+    tr:nth-child(even) {
+      background: #f5f8ff;
+    }
+    tr:hover {
+      background: #e8f0fe;
+    }
+    td {
+      padding: 0.6em 1em;
+      border-bottom: 1px solid #e8eef5;
+      text-align: center;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
   }
 }
 
-// 著者プロフィールの調整
+// --- コードブロック ---
+div.highlight, figure.highlight {
+  border-radius: 8px;
+  font-size: 0.84em;
+  line-height: 1.65;
+  border: 1px solid #e0e8f0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+code.highlighter-rouge {
+  font-size: 0.85em;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  background: #f0f6ff;
+  color: #0055bb;
+  border: 1px solid #d0e4f7;
+}
+
+// --- 記事一覧カード ---
+.list__item {
+  padding: 1.5em 0;
+  border-bottom: 1px solid #e8eef5;
+
+  .archive__item-title {
+    font-size: 1.15em;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.4em;
+    a {
+      color: #1a1a2e;
+      &:hover { color: #0066cc; }
+    }
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.92em;
+    line-height: 1.75;
+    color: #555;
+    margin-top: 0.3em;
+  }
+}
+
+// --- タグ・カテゴリバッジ ---
+.page__taxonomy-item {
+  background: #f0f6ff;
+  border: 1px solid #c8ddf7;
+  color: #0066cc;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 600;
+  padding: 0.2em 0.8em;
+  &:hover {
+    background: #0066cc;
+    color: #fff;
+  }
+}
+
+// --- 著者プロフィール ---
+.author__name {
+  font-weight: 700;
+  font-size: 1.0em;
+  color: #1a1a2e;
+}
+
 .author__bio {
-  font-size: 0.85em;
-  line-height: 1.7;
-}
-
-// ナビゲーションのフォントサイズ
-.masthead__menu-item {
-  font-size: 0.85em;
-}
-
-// 記事カードのexcerpt行間
-.archive__item-excerpt {
-  line-height: 1.8;
-}
-
-// 目次のフォントサイズ
-.toc__menu {
   font-size: 0.82em;
+  line-height: 1.7;
+  color: #555;
+}
+
+.author__urls a {
+  font-size: 0.85em;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+// --- 目次 ---
+.toc {
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  background: #f8fbff;
+
+  .toc__menu {
+    font-size: 0.82em;
+    a {
+      color: #444;
+      &:hover { color: #0066cc; }
+    }
+  }
+}
+
+// --- 読了時間・日付 ---
+.page__meta {
+  font-size: 0.78em;
+  color: #888;
+}
+
+// --- フッター ---
+.page__footer {
+  border-top: 2px solid #e0e8f0;
+  background: #f8fbff;
+  font-size: 0.82em;
+  color: #888;
+}
+
+// --- 関連記事 ---
+.page__related {
+  border-top: 2px solid #e0e8f0;
+  padding-top: 1.5em;
+
+  .archive__item-title a {
+    color: #1a1a2e;
+    font-weight: 600;
+    &:hover { color: #0066cc; }
+  }
 }
