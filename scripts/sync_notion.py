@@ -29,16 +29,37 @@ HEADERS = {
 }
 
 
+def get_db_properties() -> dict:
+    """Notion DBのプロパティ一覧を取得する。"""
+    url = f"https://api.notion.com/v1/databases/{NOTION_DATABASE_ID}"
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    return resp.json().get("properties", {})
+
+
 def get_pages() -> list[dict]:
-    """Notion DBからブログ公開フラグがONのページ一覧を取得する。"""
+    """Notion DBからページ一覧を取得する。「ブログ公開」チェックボックスがあればフィルタリングする。"""
     url = f"https://api.notion.com/v1/databases/{NOTION_DATABASE_ID}/query"
-    payload = {
-        "filter": {
-            "property": "ブログ公開",
-            "checkbox": {"equals": True},
-        },
+
+    # DBに「ブログ公開」プロパティがあればフィルター適用
+    try:
+        db_props = get_db_properties()
+        has_publish_flag = "ブログ公開" in db_props and db_props["ブログ公開"].get("type") == "checkbox"
+    except Exception:
+        has_publish_flag = False
+
+    payload: dict = {
         "sorts": [{"property": "日付", "direction": "descending"}],
     }
+    if has_publish_flag:
+        payload["filter"] = {
+            "property": "ブログ公開",
+            "checkbox": {"equals": True},
+        }
+        print("「ブログ公開」フィルターを適用します")
+    else:
+        print("「ブログ公開」プロパティなし — 全ページを取得します")
+
     resp = requests.post(url, headers=HEADERS, json=payload, timeout=30)
     resp.raise_for_status()
     return resp.json().get("results", [])
