@@ -1,0 +1,89 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Minimal Mistakes のメインCSSをインポート
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// =============================================
+// 日本語・技術ブログ向けカスタムスタイル
+// =============================================
+
+// 日本語テキストの読みやすさ改善
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+}
+
+// 本文の行間・文字サイズ調整
+.page__content,
+.archive__item-excerpt,
+.list__item .archive__item-teaser {
+  p, li {
+    line-height: 1.9;
+    font-size: 0.95em;
+  }
+}
+
+// 記事見出しの余白
+.page__content {
+  h2 {
+    margin-top: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid $border-color;
+  }
+  h3 {
+    margin-top: 1.6em;
+  }
+}
+
+// コードブロックをより見やすく
+div.highlight,
+figure.highlight {
+  border-radius: 6px;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+// インラインコード
+code.highlighter-rouge {
+  font-size: 0.85em;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+// テーブルを読みやすく
+.page__content table {
+  width: 100%;
+  font-size: 0.9em;
+  th {
+    text-align: center;
+  }
+  td, th {
+    padding: 0.5em 0.8em;
+  }
+}
+
+// 著者プロフィールの調整
+.author__bio {
+  font-size: 0.85em;
+  line-height: 1.7;
+}
+
+// ナビゲーションのフォントサイズ
+.masthead__menu-item {
+  font-size: 0.85em;
+}
+
+// 記事カードのexcerpt行間
+.archive__item-excerpt {
+  line-height: 1.8;
+}
+
+// 目次のフォントサイズ
+.toc__menu {
+  font-size: 0.82em;
+}

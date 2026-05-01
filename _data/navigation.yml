@@ -1,0 +1,9 @@
+main:
+  - title: "記事一覧"
+    url: /
+  - title: "カテゴリ"
+    url: /categories/
+  - title: "タグ"
+    url: /tags/
+  - title: "About"
+    url: /about/
