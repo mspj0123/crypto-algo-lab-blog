@@ -15,7 +15,7 @@ plugins:
 # 著者情報
 author:
   name: "mspj0123"
-  bio: "暗号資産アルゴリズム取引Botを開発・運用しています。LightGBM × テクニカル分析 × Coincheck。"
+  bio: "暗号資産アルゴリズム取引Botを開発・運用中。LightGBM × テクニカル分析 × Coincheck API。実運用の記録を発信しています。"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -35,9 +35,7 @@ defaults:
       toc: true
       toc_label: "目次"
 
-# ナビゲーション
-header_pages:
-  - about.md
+# ナビゲーション（_data/navigation.yml で管理）
 
 # スキン（カラーテーマ）: "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 minimal_mistakes_skin: "dark"
