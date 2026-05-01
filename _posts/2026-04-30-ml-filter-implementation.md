@@ -1,4 +1,5 @@
 ---
+notion_id: 3538f0b7-804f-8134-8906-f8213f089940
 layout: post
 title: "LightGBMで暗号資産自動売買の勝率を87.5%に改善した話"
 date: 2026-04-30

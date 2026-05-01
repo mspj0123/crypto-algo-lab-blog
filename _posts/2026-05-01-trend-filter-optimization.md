@@ -1,4 +1,5 @@
 ---
+notion_id: 3538f0b7-804f-81d9-8d3a-c5cea3eca31a
 layout: post
 title: "トレンドフィルターを4時間足から2時間足に変更して利益が2.6倍になった話"
 date: 2026-05-01

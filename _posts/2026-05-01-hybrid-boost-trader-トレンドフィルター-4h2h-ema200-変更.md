@@ -1,4 +1,5 @@
 ---
+notion_id: 3538f0b7-804f-81cf-b601-dbaaae394249
 layout: post
 title: "[hybrid_boost_trader] トレンドフィルター 4h→2h EMA200 変更"
 date: 2026-05-01
