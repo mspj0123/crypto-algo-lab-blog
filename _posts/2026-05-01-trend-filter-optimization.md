@@ -38,7 +38,7 @@ HybridBoost戦略では、ロングエントリーの前提条件として「EMA
 | **2時間足EMA200** | — | — | **+41,863円** | **3.32** |
 | 1時間足EMA200 | — | — | +41,447円 | 2.97 |
 
-![足種別損益比較グラフ]({{ '/assets/images/trend-filter-pnl.png' | relative_url }})
+![足種別損益比較グラフ](/crypto-algo-lab-blog/assets/images/trend-filter-pnl.png)
 
 ---
 
