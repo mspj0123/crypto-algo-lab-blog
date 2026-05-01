@@ -2,16 +2,57 @@ title: "Crypto Algo Lab"
 description: "暗号資産アルゴリズム取引の開発記録 — LightGBM × テクニカル分析 × Coincheck"
 baseurl: "/crypto-algo-lab-blog"
 url: "https://mspj0123.github.io"
-author: mspj0123
 lang: ja
 
-theme: minima
-minima:
-  skin: dark
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate
+
+# 著者情報
+author:
+  name: "mspj0123"
+  bio: "暗号資産アルゴリズム取引Botを開発・運用しています。LightGBM × テクニカル分析 × Coincheck。"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mspj0123"
+
+# サイト全体のデフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+      related: true
+      toc: true
+      toc_label: "目次"
+
+# ナビゲーション
+header_pages:
+  - about.md
+
+# スキン（カラーテーマ）: "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dark"
+
+# ページネーション
+paginate: 10
+paginate_path: "/page:num/"
+
+# カテゴリ・タグページ
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
 exclude:
   - Gemfile
