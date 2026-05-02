@@ -27,7 +27,7 @@ import requests
 
 NOTION_TOKEN = os.environ.get("NOTION_TOKEN", "")
 NOTION_DATABASE_ID = os.environ.get(
-    "NOTION_DATABASE_ID", "3518f0b7-804f-8052-be43-c3881a470443"
+    "NOTION_DATABASE_ID", "3548f0b7-804f-818e-9ecb-e90a8741cb50"
 )
 POSTS_DIR = os.path.join(os.path.dirname(__file__), "..", "_posts")
 

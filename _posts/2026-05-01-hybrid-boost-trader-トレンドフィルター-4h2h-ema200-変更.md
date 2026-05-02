@@ -2,7 +2,7 @@
 layout: post
 title: "[hybrid_boost_trader] トレンドフィルター 4h→2h EMA200 変更"
 date: 2026-05-01
-notion_id: 3538f0b7-804f-81cf-b601-dbaaae394249
+notion_id: 3548f0b7-804f-816d-bc70-dcf898801b8d
 categories: [実装]
 tags: []
 ---
